@@ -15,11 +15,6 @@ SET(SPECIAL_OS_LIBS "")
 find_package(ZED 4 REQUIRED)
 find_package(CUDA REQUIRED)
 
-IF(NOT WIN32)
-     SET(SPECIAL_OS_LIBS "pthread" "X11")
-    add_definitions(-Wno-write-strings)
-ENDIF()
-
 include_directories(${ZED_INCLUDE_DIRS})
 include_directories(${CUDA_INCLUDE_DIRS})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
