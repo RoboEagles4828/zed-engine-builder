@@ -4,7 +4,7 @@ using namespace nvinfer1;
 
 int main(int argc, char** argv) {
     if (argc == 1) {
-        std::cout << "Usage: \n 1. ./yolo_onnx_zed yolov8s.onnx yolov8s.engine\n 2. ./yolo_onnx_zed yolov8s.onnx yolov8s.engine images:1x3x512x512" << std::endl;
+        std::cout << "Usage: \n 1. ./zed_engine_builder yolov8s.onnx yolov8s.engine\n 2. ./zed_engine_builder yolov8s.onnx yolov8s.engine images:1x3x512x512" << std::endl;
         return EXIT_SUCCESS;
     }
     
