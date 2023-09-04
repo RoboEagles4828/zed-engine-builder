@@ -3,4 +3,4 @@ CMakeFiles
 Makefile
 CMakeCache.txt
 cmake_install.cmake
-yolo_onnx_zed
+zed_engine_builder
