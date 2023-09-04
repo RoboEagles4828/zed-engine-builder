@@ -1,9 +1,10 @@
 #ifndef YOLO_HPP
 #define YOLO_HPP
 
+#include <fstream>
+#include <vector>
 #include <NvInfer.h>
 #include "logging.h"
-#include "utils.h"
 
 enum class YOLO_MODEL_VERSION_OUTPUT_STYLE {
     YOLOV6,
@@ -19,6 +20,14 @@ struct BBoxInfo {
     int label;
     float prob;
 };
+
+inline bool readFile(std::string filename, std::vector<uint8_t> &file_content) {
+    // open the file:
+    std::ifstream instream(filename, std::ios::in | std::ios::binary);
+    if (!instream.is_open()) return true;
+    file_content = std::vector<uint8_t>((std::istreambuf_iterator<char>(instream)), std::istreambuf_iterator<char>());
+    return false;
+}
 
 inline std::vector<std::string> split_str(std::string s, std::string delimiter) {
     size_t pos_start = 0, pos_end, delim_len = delimiter.length();
@@ -69,6 +78,7 @@ struct OptimDim {
         return false;
     }
 };
+
 
 class Yolo {
 public:

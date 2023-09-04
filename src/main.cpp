@@ -1,14 +1,4 @@
-// #include <iostream>
-// #include <chrono>
-// #include <cmath>
-// #include "cuda_utils.h"
-// #include "logging.h"
-#include "utils.h"
-
 #include "yolo.hpp"
-
-// #include <sl/Camera.hpp>
-// #include <NvInfer.h>
 
 using namespace nvinfer1;
 
